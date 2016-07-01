@@ -101,7 +101,7 @@ describe('rethinkdb-stream', function () {
           var handleData = sinon.stub()
           stream.on('data', handleData)
           stream.on('error', function (err) {
-            expect(err).to.equal(self.err)
+            expect(err === self.err).to.equal(true)
             done()
           })
           stream.close()
@@ -121,7 +121,7 @@ describe('rethinkdb-stream', function () {
           var handleData = sinon.stub()
           stream.on('data', handleData)
           stream.on('error', function (err) {
-            expect(err).to.equal(self.err)
+            expect(err === self.err).to.equal(true)
             done()
           })
         })
@@ -167,7 +167,7 @@ describe('rethinkdb-stream', function () {
         shimmer.wrap(cursor, 'next', function (next) {
           return function (cb) {
             next.call(cursor, function (err, data) {
-              cursor.close()
+              stream.close()
               cb(err, data)
             })
           }
@@ -179,6 +179,24 @@ describe('rethinkdb-stream', function () {
             done()
           })
         })
+      })
+    })
+    describe('read mid-read', function () {
+      it('should not send any data', function (done) {
+        var cursor = this.cursor
+        var stream = createCursor(cursor)
+        var handleData = sinon.stub()
+        shimmer.wrap(cursor, 'next', function (next) {
+          return function (cb) {
+            next.call(cursor, function (err, data) {
+              var ret = stream._read()
+              expect(ret).to.equal(false)
+              cb(err, data)
+            })
+          }
+        })
+        stream.on('data', handleData)
+        stream.on('end', done)
       })
     })
   })

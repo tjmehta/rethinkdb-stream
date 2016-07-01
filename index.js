@@ -70,6 +70,8 @@ CursorStream.prototype._read = function () {
   debug('_read')
   this._cursor.next(function (err, row) {
     self._reading = false
+    debug('next')
+    if (self._closing) { return }
     if (err) {
       debug('next err', err)
       if (isNoMoreRowsErr(err)) {
@@ -81,7 +83,6 @@ CursorStream.prototype._read = function () {
       self.emit('error', err)
       return
     }
-    if (self._closing) { return }
     debug('next row', row)
     self.push(row)
   })

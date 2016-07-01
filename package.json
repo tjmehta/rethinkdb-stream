@@ -1,0 +1,43 @@
+{
+  "name": "rethinkdb-stream",
+  "version": "0.0.0",
+  "description": "Convert a rethinkdb cursor into a readable stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover _mocha ./test && istanbul --text check-coverage --statements 100 --functions 100 --branches 100 --lines 100",
+    "test-watch": "nodemon -x mocha ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjmehta/rethinkdb-cursor-stream.git"
+  },
+  "keywords": [
+    "rethinkdb",
+    "cursor",
+    "rethink",
+    "stream",
+    "readable",
+    "changes",
+    "query"
+  ],
+  "author": "Tejesh Mehta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjmehta/rethinkdb-cursor-stream/issues"
+  },
+  "homepage": "https://github.com/tjmehta/rethinkdb-cursor-stream",
+  "dependencies": {
+    "call-me-maybe": "^1.0.1",
+    "debug": "^2.2.0",
+    "shimmer": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "ignore-errors": "^1.0.0",
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3",
+    "rethinkdb": "^2.3.2",
+    "sinon": "^1.17.4",
+    "sinon-as-promised": "^4.0.0"
+  }
+}

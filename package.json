@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tjmehta/rethinkdb-cursor-stream.git"
+    "url": "https://github.com/tjmehta/rethinkdb-stream.git"
   },
   "keywords": [
     "rethinkdb",
@@ -23,9 +23,9 @@
   "author": "Tejesh Mehta",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tjmehta/rethinkdb-cursor-stream/issues"
+    "url": "https://github.com/tjmehta/rethinkdb-stream/issues"
   },
-  "homepage": "https://github.com/tjmehta/rethinkdb-cursor-stream",
+  "homepage": "https://github.com/tjmehta/rethinkdb-stream",
   "dependencies": {
     "call-me-maybe": "^1.0.1",
     "debug": "^2.2.0",

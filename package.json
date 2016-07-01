@@ -1,6 +1,6 @@
 {
   "name": "rethinkdb-stream",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Convert a rethinkdb cursor into a readable stream",
   "main": "index.js",
   "scripts": {

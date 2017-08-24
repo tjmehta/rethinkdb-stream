@@ -28,7 +28,7 @@
   "homepage": "https://github.com/tjmehta/rethinkdb-stream",
   "dependencies": {
     "call-me-maybe": "^1.0.1",
-    "debug": "^2.2.0",
+    "debug": "^3.0.1",
     "shimmer": "^1.1.0"
   },
   "devDependencies": {

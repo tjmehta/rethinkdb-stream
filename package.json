@@ -37,7 +37,7 @@
     "istanbul": "^0.4.4",
     "mocha": "^3.2.0",
     "rethinkdb": "^2.3.2",
-    "sinon": "^1.17.4",
+    "sinon": "^4.1.4",
     "sinon-as-promised": "^4.0.0"
   }
 }
